@@ -10,7 +10,7 @@ import mcstuff.minecraftstuff as stuff
 import mcpi.block as block
 import time
 
-VERSION = "2.0.2"
+VERSION = "2.0.3"
 localedir = os.path.join(os.path.dirname(__file__), 'locale')
 _ = gettext.translation(domain = 'scratch2mcpi', localedir = localedir, fallback = True).ugettext
 
@@ -69,8 +69,8 @@ def listen(s, mc):
             if msg[0] == 'broadcast':
                 if not mc:
                     mc = minecraft.Minecraft.create()
-                if msg[1] == 'hello_minecraft':
-                    mc.postToChat("hello minecraft")
+                if msg[1] == 'hola_minecraft':
+                    mc.postToChat("Hola Minecraft")
                 elif msg[1] == 'setPos':
                     if (is_number(mcpiX) and is_number(mcpiY) and is_number(mcpiZ)):
                         mc.player.setPos(mcpiX, mcpiY, mcpiZ)
@@ -241,7 +241,7 @@ def main():
             mc.postToChat("Scratch2MCPI connected to Minecraft Pi.")
             print _("Connected to Scratch")
 
-            s.broadcast("hello_minecraft")
+            s.broadcast("hola_minecraft")
             s.broadcast("setPos")
             s.broadcast("setBlock")
             # s.broadcast("setBlocks")
