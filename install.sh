@@ -67,7 +67,7 @@ else
       if [ -f "/home/pi/Documents/Scratch Projects/turtle_$file.sb" ]; then
           echo "\n\033[33m\033[1mturtle_$file.sb exists. Skipped downloading.\033[00m\n"
       else
-          wget -P "/home/pi/Documents/Scratch Projects" http://naominix.github.io/scratch2mcpi_projects/turtle_$file.sb
+          wget -P "/home/pi/Documents/Scratch Projects" https://github.com/eduardofilo/scratch2mcpi/blob/master/scratch_projects/turtle_$file.sb
       fi
     done
 
@@ -76,7 +76,7 @@ else
         echo "\n\033[33m\033[1mScratch2MCPI shortcut on Desktop exists. Skipped copying.\033[00m\n"
     else
         echo "\n\033[36m\033[1mCopying Scratch2MCPI shortcut on Desktop...\033[00m\n"
-        wget -P "/home/pi/Desktop" http://scratch2mcpi.github.io/scratch2mcpi.desktop
+        wget -P "/home/pi/Desktop" https://github.com/eduardofilo/scratch2mcpi/blob/master/desktop_files/scratch2mcpi.desktop
     fi
 
     # Copy Scratch2MCPI Terminal shortcut on Desktop
@@ -84,7 +84,7 @@ else
         echo "\n\033[33m\033[1mScratch2MCPI Terminal shortcut on Desktop exists. Skipped copying.\033[00m\n"
     else
         echo "\n\033[36m\033[1mCopying Scratch2MCPI Terminal shortcut on Desktop...\033[00m\n"
-        wget -P "/home/pi/Desktop" http://scratch2mcpi.github.io/scratch2mcpi_terminal.desktop
+        wget -P "/home/pi/Desktop" https://github.com/eduardofilo/scratch2mcpi/blob/master/desktop_files/scratch2mcpi_terminal.desktop
     fi
 
     echo "\n\033[32m\033[1mInstallation of scratch2mcpi is completed.\033[00m\n"
