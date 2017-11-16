@@ -71,11 +71,11 @@ def listen(s, mc):
                     mc = minecraft.Minecraft.create()
                 if msg[1] == 'hola_minecraft':
                     mc.postToChat("Hola Minecraft")
-                elif msg[1] == 'setPos':
+                elif msg[1] == 'ponPos':
                     if (is_number(mcpiX) and is_number(mcpiY) and is_number(mcpiZ)):
                         mc.player.setPos(mcpiX, mcpiY, mcpiZ)
                         print "setPos: %.1f %.1f %.1f" % (mcpiX, mcpiY, mcpiZ)
-                elif msg[1] == 'setBlock':
+                elif msg[1] == 'ponBloque':
                     if (is_number(mcpiX) and is_number(mcpiY) and is_number(mcpiZ) and is_number(blockTypeId) and is_number(blockData)):
                         mc.setBlock(mcpiX, mcpiY, mcpiZ, blockTypeId, blockData)
                         print "setBlock: %d %d %d %d %d" % (mcpiX, mcpiY, mcpiZ, blockTypeId, blockData)
@@ -124,23 +124,23 @@ def listen(s, mc):
                         print "steve.setverticalheading: (%d)" % (degrees)
                 # Minecraft Graphics Turtle(End)
                 # Minecraft Stuff(Start)
-                elif msg[1] == 'stuff:drawLine':
+                elif msg[1] == 'util:dibujaLinea':
                     mcDrawing.drawLine(int(mcpiX1), int(mcpiY1), int(mcpiZ1), int(mcpiX), int(mcpiY), int(mcpiZ), blockTypeId, blockData)
                     print "mcDrawing.drawLine: (%d, %d, %d, %d, %d, %d, %d, %d)" % (mcpiX1, mcpiY1, mcpiZ1, mcpiX, mcpiY, mcpiZ, blockTypeId, blockData)
-                elif msg[1] == 'stuff:drawSphere':
+                elif msg[1] == 'util:dibujaEsfera':
                     mcDrawing.drawSphere(mcpiX, mcpiY, mcpiZ, radius, blockTypeId, blockData)
                     print "mcDrawing.drawSphere: (%d, %d, %d, %d, %d, %d)" % (mcpiX, mcpiY, mcpiZ, radius, blockTypeId, blockData)
-                elif msg[1] == 'stuff:drawCircle':
+                elif msg[1] == 'util:dibujaCirculo':
                     mcDrawing.drawCircle(mcpiX, mcpiY, mcpiZ, radius, blockTypeId, blockData)
                     print "mcDrawing.drawCircle: (%d, %d, %d, %d, %d, %d)" % (mcpiX, mcpiY, mcpiZ, radius, blockTypeId, blockData)
-                elif msg[1] == 'stuff:resetShapePoints':
+                elif msg[1] == 'util:limpiaPuntosForma':
                     shapePoints = []
                     mcDrawing = stuff.MinecraftDrawing(mc)
-                elif msg[1] == 'stuff:setShapePoints':
+                elif msg[1] == 'util:ponPuntosForma':
                     shapePoints.append(minecraft.Vec3(int(mcpiX), int(mcpiY), int(mcpiZ)))
                     print "append.shapePoints:"
                     print ' '.join(str(p) for p in shapePoints)
-                elif msg[1] == 'stuff:drawFace':
+                elif msg[1] == 'util:dibujaCara':
                     if (fill == 'True'):
                         fillFlag = True
                     elif (fill == 'False'):
@@ -152,11 +152,11 @@ def listen(s, mc):
                     print(blockTypeId)
                 # Minecraft Stuff(End)
 
-                elif msg[1] == 'setBlocks':
+                elif msg[1] == 'ponBloques':
                     if (is_number(mcpiX0) and is_number(mcpiY0) and is_number(mcpiZ0) and is_number(mcpiX1) and is_number(mcpiY1) and is_number(mcpiZ1) and is_number(blockTypeId) and is_number(blockData)):
                         mc.setBlocks(mcpiX0, mcpiY0, mcpiZ0, mcpiX1, mcpiY1, mcpiZ1, blockTypeId, blockData)
                         print "setBlocks(%d, %d, %d, %d, %d, %d, %d, %d" % (mcpiX0, mcpiY0, mcpiZ0, mcpiX1, mcpiY1, mcpiZ1, blockTypeId, blockData)
-                elif msg[1] == 'getPos':
+                elif msg[1] == 'leePos':
                     playerPos = mc.player.getPos()
                     pos = playerPos
                     s.sensorupdate({
@@ -164,17 +164,17 @@ def listen(s, mc):
                         'playerY': playerPos.y,
                         'playerZ': playerPos.z
                     })
-                elif msg[1] == 'getHeight':
+                elif msg[1] == 'leeAltura':
                     posY = mc.getHeight(mcpiX, mcpiZ)
                     s.sensorupdate({'posY': posY})
                     mc.postToChat("posY: %d" % posY)
-                elif msg[1] == 'getBlock':
+                elif msg[1] == 'leeBloque':
                     blockFound = mc.getBlockWithData(mcpiX, mcpiY, mcpiZ)
                     s.sensorupdate({
                         'blockTypeId': blockFound.id,
                         'blockData': blockFound.data
                     })
-                elif msg[1] == 'pollBlockHits':
+                elif msg[1] == 'leeToquesBloque':
                     blockEvents = mc.events.pollBlockHits()
                     print blockEvents
                     if blockEvents:
@@ -194,7 +194,7 @@ def listen(s, mc):
                             'blockEventFace': '',
                             'blockEventEntityId': ''
                         })
-                elif msg[1] == 'reset':
+                elif msg[1] == 'limpia':
                     mc.postToChat('reset the world')
                     mc.setBlocks(-100, 0, -100, 100, 63, 100, 0, 0)
                     mc.setBlocks(-100, -63, -100, 100, -2, 100, 1, 0)
@@ -242,33 +242,33 @@ def main():
             print _("Connected to Scratch")
 
             s.broadcast("hola_minecraft")
-            s.broadcast("setPos")
-            s.broadcast("setBlock")
-            # s.broadcast("setBlocks")
-            s.broadcast("getPos")
-            s.broadcast("getHeight")
-            s.broadcast("getBlock")
-            s.broadcast("pollBlockHits")
-            s.broadcast("reset")
+            s.broadcast("ponPos")
+            s.broadcast("ponBloque")
+            s.broadcast("ponBloques")
+            s.broadcast("leePos")
+            s.broadcast("leeAltura")
+            s.broadcast("leeBloque")
+            s.broadcast("leeToquesBloque")
+            s.broadcast("limpia")
 
-            s.broadcast("turtle:forward")
-            s.broadcast("turtle:backward")
-            s.broadcast("turtle:right")
-            s.broadcast("turtle:left")
-            s.broadcast("turtle:up")
-            s.broadcast("turtle:down")
-            s.broadcast("turtle:setPos")
-            s.broadcast("turtle:penup")
-            s.broadcast("turtle:pendown")
-            s.broadcast("turtle:setheading")
-            s.broadcast("turtle:setverticalheading")
+            #s.broadcast("turtle:forward")
+            #s.broadcast("turtle:backward")
+            #s.broadcast("turtle:right")
+            #s.broadcast("turtle:left")
+            #s.broadcast("turtle:up")
+            #s.broadcast("turtle:down")
+            #s.broadcast("turtle:setPos")
+            #s.broadcast("turtle:penup")
+            #s.broadcast("turtle:pendown")
+            #s.broadcast("turtle:setheading")
+            #s.broadcast("turtle:setverticalheading")
 
-            s.broadcast("stuff:drawSphere")
-            s.broadcast("stuff:drawCircle")
-            s.broadcast("stuff:drawLine")
-            s.broadcast("stuff:drawFace")
-            s.broadcast("stuff:resetShapePoints")
-            s.broadcast("stuff:setShapePoints")
+            s.broadcast("util:dibujaEsfera")
+            s.broadcast("util:dibujaCirculo")
+            s.broadcast("util:dibujaLinea")
+            s.broadcast("util:dibujaCara")
+            s.broadcast("util:limpiaPuntosForma")
+            s.broadcast("util:ponPuntosForma")
 
             s.sensorupdate({
                 'blockTypeId': 0,
