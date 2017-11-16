@@ -13,13 +13,13 @@ On the latest 2.0, it supports Minecraft Graphics Turtle.
 Install Minecraft Pi Edition if you don't have. You can either install from http://pi.minecraft.net/?p=68 or use the following installation script.(If you install Raspbian OS from the latest NOOBS, Minecraft Pi may be pre-installed. If the Minecraft Pi icon exists on the Desktop, skip this step.)
 
 ```
-# curl http://scratch2mcpi.github.io/mcpi.sh | sh
+$ curl http://scratch2mcpi.github.io/mcpi.sh | sh
 ```
 
 Install Scratch2MCPI
 
 ```
-# curl https://raw.githubusercontent.com/eduardofilo/scratch2mcpi/master/install.sh | sh
+$ curl https://raw.githubusercontent.com/eduardofilo/scratch2mcpi/master/install.sh | sh
 ```
 
 ## Getting Started
