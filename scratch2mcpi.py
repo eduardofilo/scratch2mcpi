@@ -238,7 +238,8 @@ def main():
         mc = minecraft.Minecraft.create()
 
         if (s):
-            mc.postToChat("Scratch2MCPI conectado con Minecraft Pi. Vamos a programar!")
+            mc.postToChat("Scratch2MCPI conectado con Minecraft Pi.")
+            mc.postToChat("Vamos a programar!")
             print _("Connected to Scratch")
 
             s.broadcast("hola_minecraft")
