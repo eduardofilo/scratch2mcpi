@@ -55,7 +55,7 @@ else
       if [ -f "/home/pi/Documents/Scratch Projects/$file.sb" ]; then
           echo "\n\033[33m\033[1m$file.sb exists. Skipped downloading.\033[00m\n"
       else
-          wget -P "/home/pi/Documents/Scratch Projects" https://github.com/eduardofilo/scratch2mcpi/blob/master/scratch_projects/$file.sb?raw=true
+          wget -P "/home/pi/Documents/Scratch Projects" https://github.com/eduardofilo/scratch2mcpi/raw/master/scratch_projects/$file.sb
       fi
     done
 
@@ -67,7 +67,7 @@ else
       if [ -f "/home/pi/Documents/Scratch Projects/turtle_$file.sb" ]; then
           echo "\n\033[33m\033[1mturtle_$file.sb exists. Skipped downloading.\033[00m\n"
       else
-          wget -P "/home/pi/Documents/Scratch Projects" https://github.com/eduardofilo/scratch2mcpi/blob/master/scratch_projects/turtle_$file.sb
+          wget -P "/home/pi/Documents/Scratch Projects" https://github.com/eduardofilo/scratch2mcpi/raw/master/scratch_projects/turtle_$file.sb
       fi
     done
 
