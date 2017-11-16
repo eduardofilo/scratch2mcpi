@@ -32,13 +32,22 @@ $ curl https://raw.githubusercontent.com/eduardofilo/scratch2mcpi/master/install
 
 You can send the following commands by "broadcast" block of Scratch.
 
-- hello_minecraft: Send "hello minecraft" message to chat section.
-- setPos: Move the player to the position specified by Scratch variables: "mcpiX", "mcpiY", "mcpiZ".
-- setBlock: Place the block at the position specified by Scratch variables: "mcpiX", "mcpiY", "mcpiZ". The block type and block data can be specified by Scratch variables: "blockTypeId" and "blockData".
-- getPos: Get the current position of the player. The position values can be gotten by Scratch sensor values: "PlayerX", "PlayerY", "PlayerZ".
-- getHeight: Get the y position of the highest block at the position specified by Scratch variables: "mcpiX" and "mcpiZ". The y postion can be gotten by Scratch sensor value "posY".
-- pollBlockHits: Get the block event information of the last block hit by the player. The event info values can be gotten by Scratch sensor values: "blockEventX", "blockEventY", "blockEventZ", "blockEventFace", "blockEventEntityId".
-- reset: [WARNING] Reset the world. This will delete clean up the world, so please be aware to use it.
+- `hola_minecraft`: Send "hello minecraft" message to chat section.
+- `escribe <mensaje>`:
+- `ponPos`: Move the player to the position specified by Scratch variables: "mcpiX", "mcpiY", "mcpiZ".
+- `ponBloque`: Place the block at the position specified by Scratch variables: "mcpiX", "mcpiY", "mcpiZ". The block type and block data can be specified by Scratch variables: "blockTypeId" and "blockData".
+- `ponBloques`: Pone bloques entre las posiciones especificadas por las variables Scratch: "mcpiX1", "mcpiY1", "mcpiZ1" y "mcpiX1", "mcpiY1", "mcpiZ1". The block type and block data can be specified by Scratch variables: "blockTypeId" and "blockData".
+- `leePos`: Get the current position of the player. The position values can be gotten by Scratch sensor values: "PlayerX", "PlayerY", "PlayerZ".
+- `leeAltura`: Get the y position of the highest block at the position specified by Scratch variables: "mcpiX" and "mcpiZ". The y postion can be gotten by Scratch sensor value "posY".
+- `leeToquesBloque`: Get the block event information of the last block hit by the player. The event info values can be gotten by Scratch sensor values: "blockEventX", "blockEventY", "blockEventZ", "blockEventFace", "blockEventEntityId".
+- `leeBloque`: Obtiene la información del bloque situado en la posición especificada por las variables Scratch: "mcpiX", "mcpiY", "mcpiZ". El tipo y dato del bloque se almacena en las variables Scratch: "blockTypeId" y "blockData".
+- `limpia`: [WARNING] Reset the world. This will delete clean up the world, so please be aware to use it.
+- `util:dibujaEsfera`
+- `util:dibujaCirculo`
+- `util:dibujaLinea`
+- `util:dibujaCara`
+- `util:limpiaPuntosForma`
+- `util:ponPuntosForma`
 
 ## Reference
 
