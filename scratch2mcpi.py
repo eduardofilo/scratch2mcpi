@@ -200,7 +200,7 @@ def listen(s, mc):
                     mc.setBlocks(-100, -63, -100, 100, -2, 100, 1, 0)
                     mc.setBlocks(-100, -1, -100, 100, -1, 100, 2, 0)
                     mc.player.setPos(0, 0, 0)
-                elif msg[1] == 'echo' or msg[1].startswith('echo '):
+                elif msg[1] == 'escribe' or msg[1].startswith('escribe '):
                     words = msg[1].split()
                     mc.postToChat(" ".join(words[1:]))
             elif msg[0] == 'sensor-update':
@@ -250,6 +250,7 @@ def main():
             s.broadcast("leeBloque")
             s.broadcast("leeToquesBloque")
             s.broadcast("limpia")
+            s.broadcast("escribe")
 
             #s.broadcast("turtle:forward")
             #s.broadcast("turtle:backward")
