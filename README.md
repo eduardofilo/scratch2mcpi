@@ -19,7 +19,7 @@ Install Minecraft Pi Edition if you don't have. You can either install from http
 Install Scratch2MCPI
 
 ```
-# curl http://scratch2mcpi.github.io/install.sh | sh
+# curl https://raw.githubusercontent.com/eduardofilo/scratch2mcpi/master/install.sh | sh
 ```
 
 ## Getting Started
