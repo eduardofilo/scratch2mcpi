@@ -76,7 +76,7 @@ else
         echo "\n\033[33m\033[1mScratch2MCPI shortcut on Desktop exists. Skipped copying.\033[00m\n"
     else
         echo "\n\033[36m\033[1mCopying Scratch2MCPI shortcut on Desktop...\033[00m\n"
-        wget -P "/home/pi/Desktop" https://github.com/eduardofilo/scratch2mcpi/blob/master/desktop_files/scratch2mcpi.desktop
+        wget -P "/home/pi/Desktop" https://github.com/eduardofilo/scratch2mcpi/raw/master/desktop_files/scratch2mcpi.desktop
     fi
 
     # Copy Scratch2MCPI Terminal shortcut on Desktop
@@ -84,7 +84,7 @@ else
         echo "\n\033[33m\033[1mScratch2MCPI Terminal shortcut on Desktop exists. Skipped copying.\033[00m\n"
     else
         echo "\n\033[36m\033[1mCopying Scratch2MCPI Terminal shortcut on Desktop...\033[00m\n"
-        wget -P "/home/pi/Desktop" https://github.com/eduardofilo/scratch2mcpi/blob/master/desktop_files/scratch2mcpi_terminal.desktop
+        wget -P "/home/pi/Desktop" https://github.com/eduardofilo/scratch2mcpi/raw/master/desktop_files/scratch2mcpi_terminal.desktop
     fi
 
     echo "\n\033[32m\033[1mInstallation of scratch2mcpi is completed.\033[00m\n"
