@@ -160,9 +160,9 @@ def listen(s, mc):
                     playerPos = mc.player.getPos()
                     pos = playerPos
                     s.sensorupdate({
-                        'mcpiX': playerPos.x,
-                        'mcpiY': playerPos.y,
-                        'mcpiZ': playerPos.z
+                        'playerX': playerPos.x,
+                        'playerY': playerPos.y,
+                        'playerZ': playerPos.z
                     })
                 elif msg[1] == 'leeAltura':
                     posY = mc.getHeight(mcpiX, mcpiZ)
