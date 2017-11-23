@@ -155,7 +155,7 @@ def listen(s, mc):
                 elif msg[1] == 'ponBloques':
                     if (is_number(mcpiX0) and is_number(mcpiY0) and is_number(mcpiZ0) and is_number(mcpiX1) and is_number(mcpiY1) and is_number(mcpiZ1) and is_number(blockTypeId) and is_number(blockData)):
                         mc.setBlocks(mcpiX0, mcpiY0, mcpiZ0, mcpiX1, mcpiY1, mcpiZ1, blockTypeId, blockData)
-                        print "setBlocks(%d, %d, %d, %d, %d, %d, %d, %d" % (mcpiX0, mcpiY0, mcpiZ0, mcpiX1, mcpiY1, mcpiZ1, blockTypeId, blockData)
+                        print "setBlocks(%d, %d, %d, %d, %d, %d, %d, %d)" % (mcpiX0, mcpiY0, mcpiZ0, mcpiX1, mcpiY1, mcpiZ1, blockTypeId, blockData)
                 elif msg[1] == 'leePos':
                     playerPos = mc.player.getPos()
                     pos = playerPos
